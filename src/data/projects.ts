@@ -12,20 +12,14 @@ export const projects: Project[] = [
     description: "Un site perso pour montrer mes projets",
     tags: ["Vue", "Tailwind", "TypeScript"],
     image: "/img/portfolio.png",
-    link: "https://github.com/tonportfolio",
+    link: "https://github.com/Tonguechaude",
   },
   {
-    title: "API NodeJS",
-    description: "Une API REST avec Express et MongoDB",
-    tags: ["Node", "Express", "MongoDB"],
-    image: "/img/api.png",
-    link: "https://github.com/tonapi",
-  },
-  {
-    title: "Jeu Canvas",
-    description: "Petit jeu HTML5 avec Canvas",
-    tags: ["JavaScript", "Canvas"],
-    image: "/img/jeu.png",
-    link: "https://github.com/tonjeu",
+    title: "Jeu de la vie en Rust avec Bevy",
+    description:
+      "Implémentation du jeu de la vie de Conway en Rust avec Bevy et déployé sur WebAssembly",
+    tags: ["Rust", "Bevy", "WASM"],
+    image: "/img/gol.png",
+    link: "https://github.com/Tonguechaude/GOL.rs",
   },
 ];
