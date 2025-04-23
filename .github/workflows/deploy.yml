@@ -1,37 +1,37 @@
-name: Deploy Vue.js to VPS
+# name: Deploy Vue.js to VPS
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+#       - name: Install pnpm
+#         run: npm install -g pnpm
 
-      - name: Install deps & build
-        run: |
-          pnpm install
-          pnpm build
+#       - name: Install deps & build
+#         run: |
+#           pnpm install
+#           pnpm build
 
-      - name: Deploy dist/ to VPS
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.HOST }}
-          port: ${{ secrets.PORT }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.KEY }}
-          source: "dist/*"
-          target: "/var/www/tonguechaude"
+#       - name: Deploy dist/ to VPS
+#         uses: appleboy/scp-action@v0.1.7
+#         with:
+#           host: ${{ secrets.HOST }}
+#           port: ${{ secrets.PORT }}
+#           username: ${{ secrets.USER }}
+#           key: ${{ secrets.KEY }}
+#           source: "dist/*"
+#           target: "/var/www/tonguechaude"
