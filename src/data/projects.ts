@@ -8,11 +8,11 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Mon Portfolio",
-    description: "Un site perso pour montrer mes projets",
-    tags: ["Vue", "Tailwind", "TypeScript"],
-    image: "/img/portfolio.png",
-    link: "https://github.com/Tonguechaude",
+    title: "Cube.rs",
+    description: "Juste un cube qui tourne en Rust",
+    tags: ["Rust", "Make", "Cargo"],
+    image: "/img/cuberust.png",
+    link: "https://github.com/Tonguechaude/cube.rs",
   },
   {
     title: "Jeu de la vie en Rust avec Bevy",
@@ -21,5 +21,12 @@ export const projects: Project[] = [
     tags: ["Rust", "Bevy", "WASM"],
     image: "/img/gol.png",
     link: "https://github.com/Tonguechaude/GOL.rs",
+  },
+  {
+    title: "Portfolio Tonguechaude",
+    description: "Un site perso pour montrer mes projets",
+    tags: ["Vue", "Tailwind", "TypeScript"],
+    image: "/img/portfolio.png",
+    link: "https://github.com/Tonguechaude/Portfolio-vue",
   },
 ];

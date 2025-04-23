@@ -4,15 +4,16 @@ import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard.vue";
 import TagFilter from "@/components/TagFilter.vue";
 
-const selectedTag = ref<string | null>(null);
+const selectedTags = ref<string[]>([]);
 
 const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();
 
-const filteredProjects = computed(() =>
-  selectedTag.value
-    ? projects.filter((p) => p.tags.includes(selectedTag.value!))
-    : projects
-);
+const filteredProjects = computed(() => {
+  if (selectedTags.value.length === 0) return projects;
+  return projects.filter((p) =>
+    selectedTags.value.every((tag) => p.tags.includes(tag))
+  );
+});
 </script>
 
 <template>
@@ -21,9 +22,11 @@ const filteredProjects = computed(() =>
 
     <TagFilter
       :tags="allTags"
-      :selectedTag="selectedTag"
-      @update:selectedTag="(tag) => (selectedTag = tag)"
+      :selectedTags="selectedTags"
+      @update:selectedTags="(tags) => (selectedTags = tags)"
     />
+
+    <br />
 
     <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       <ProjectCard
